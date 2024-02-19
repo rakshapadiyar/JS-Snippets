@@ -23,10 +23,5 @@ let ans = [];
 ans = calculateAny(radius, area);
 console.log("area : " + ans);
 
-ans = [];
-ans = calculateAny(radius, diameter);
-console.log("diameter : " + ans);
-
-ans = [];
-ans = calculateAny(radius, circumference);
-console.log("circumference : " + ans);
+console.log("diameter : " + calculateAny(radius, diameter));
+console.log("circumference : " + calculateAny(radius, circumference));
