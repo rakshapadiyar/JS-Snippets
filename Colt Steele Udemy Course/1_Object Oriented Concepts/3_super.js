@@ -16,11 +16,11 @@ class ChildTriangle extends Triangle {
     this.color = color;
   }
   describe() {
-    console.log(`My color is ${this.color}`);
+    console.log(`My color is ${this.color} ${this.a}`);
   }
 }
 
 var tri1 = new Triangle(10, 20);
-tri1.describe();
+tri1.describe(); //My sides are 10 and 20
 var tri2 = new ChildTriangle(10, 20, "red");
-tri2.describe();
+tri2.describe(); //My color is red 10

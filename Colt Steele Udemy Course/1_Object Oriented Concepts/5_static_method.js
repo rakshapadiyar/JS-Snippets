@@ -8,9 +8,12 @@ class Cat {
   }
 
   static type = "tuxedo";
+  static staticMeow() {
+    console.log(`${Cat.type} says Meow meow meowwwww`);
+  }
 
   static meow() {
-    console.log(`${Cat.type} says Meow meow meowwwww`);
+    console.log(`static ${Cat.type} says Meow meow meowwwww, her name is ${this.name} ${this.color}`);
   }
 
   meow() {
@@ -19,5 +22,8 @@ class Cat {
 }
 
 const cat1 = new Cat("Peggy", "White");
-cat1.meow();
-Cat.meow();
+cat1.meow(); //Peggy says MEOW!!!
+Cat.staticMeow() //tuxedo says Meow meow meowwwww
+Cat.meow(); //static tuxedo says Meow meow meowwwww, her name is Cat undefined
+
+// static method does not have access to any varioables inside class as it wa snot initialized. so undefined

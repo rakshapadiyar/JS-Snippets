@@ -19,9 +19,12 @@ class Cat {
 }
 
 var cat1 = new Cat("Devu", "Orange");
-cat1.describeCat();
+cat1.describeCat(); // Hi I am Devu, my fur is Orange and my mood is always grumpy
 
 Cat.mood = "happy";
 
 var cat2 = new Cat("Bittu", "Gray");
-cat2.describeCat();
+cat2.describeCat(); //Hi I am Bittu, my fur is Gray and my mood is always happy
+
+var cat3 = new Cat("Peggy", "White");
+cat3.describeCat();// Hi I am Peggy, my fur is White and my mood is always happy
