@@ -1,0 +1,47 @@
+what is a promise?
+
+Simple: promise object is a placeholder that will filled with a value from a async operation at a later point of time
+container for a future value
+
+"MDN" : Promise is an object that repesents an eventual completion of an asynchronous operation.
+(its easy)
+
+------------------------------------------------------------------------------
+
+Promise Chaining
+
+problem : 
+createOrder -> proceedToPayment -> showOrderSummary -> updateWalletBalance 
+
+//CALLBACK HELL , PYRAMID OF DOOM -> code growing horizontally
+
+createOrder(cart,function(orderId){
+    proceedToPayment(orderId,function(paymentInfo)
+    { 
+        showOrderSummary(paymentInfo, function(){
+             updateWalletBalance();
+        })
+    })
+})
+
+solution:
+this is handled with promises/ promise chaining.
+
+createOrder(cart)
+.then(function(orderId){
+    return proceedToPayment(orderId)
+})
+.then(function(paymentInfo){
+    return showOrderSummary(paymentInfo)
+})
+.then(function(paymentInfo){
+    return updateWalletBalance(paymentInfo)
+})
+
+when we write return, teh returned data will be passed down to bnext function
+
+fo readability use arraow function
+createOrder(cart)
+.then(orderId => proceedToPayment(orderId))
+.then(paymentInfo => showOrderSummary(paymentInfo))
+.then(paymentInfo => updateWalletBalance(paymentInfo))

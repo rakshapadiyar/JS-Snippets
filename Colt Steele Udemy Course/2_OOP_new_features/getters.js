@@ -18,6 +18,7 @@ class Circle {
 var c = new Circle(4);
 console.log(c.diameter); //used like a property op:8
 
+//c.diameter()// gives error "c.diameter is not a function"
 //why we need getter method in the first place
 class Circle2 {
   constructor(radius) {
